@@ -5,11 +5,7 @@ renderHTML('cardbenar', 'content.html');
 
 getJSON("https://t.if.co.id/json/bagas.json","null","null",responseFunction);
 function responseFunction(response) {
-  if (response && response.card && response.card.details) {
-    setInner('nama', response.card.details.name);
-  } else {
-    console.error('Data tidak lengkap atau tidak valid.');
-  }
+  setInner('nama', response.card.details.name);
   console.log('HTTP Status:', response.status);
   console.log('Response Data:', response.data);
   // let cardname;
