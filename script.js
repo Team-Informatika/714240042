@@ -1,7 +1,7 @@
 import { getJSON } from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.2.0/api.js"
 import { renderHTML, setInner} from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.2.0/element.js"
 
-renderHTML('card-benar', 'content.html');
+renderHTML('cardbenar', 'content.html');
 
 getJSON("https://t.if.co.id/json/bagas.json","null","null",responseFunction);
 function responseFunction(response) {
