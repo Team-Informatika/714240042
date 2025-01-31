@@ -5,9 +5,7 @@ renderHTML('cardbenar', 'content.html');
 
 getJSON("https://t.if.co.id/json/bagas.json","null","null",responseFunction);
 function responseFunction(response) {
-  setInner('nama', name);
-  const name = response.card.details.name;
-  console.log(name)
+  setInner('nama', response.name);
   console.log('HTTP Status:', response.status);
   console.log('Response Data:', response.data);
   let cardname;
