@@ -1,312 +1,155 @@
-@import url("https://fonts.googleapis.com/css?family=Krub:400,700");
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
-  width: 100%;
-  height: 100%;
+:root {
+  --background: white;
+
+  --primary: #ff1ead;
+  --secondary: #1effc3;
+  
+  --card-size: 300px;
 }
 
 body {
-  background: #202020;
-  font-family: "Krub", sans-serif;
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: var(--background);
+  font-family: 'Source Code Pro', monospace;
+  
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.card {
-  position: absolute;
-  margin: auto;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 350px;
-  height: 500px;
-  border-radius: 10px;
-  box-shadow: 0 10px 25px 5px rgba(0, 0, 0, 0.2);
-  background: #151515;
-  overflow: hidden;
-}
-.card .ds-top {
-  position: absolute;
-  margin: auto;
-  top: 0;
-  right: 0;
-  left: 0;
-  width: 300px;
-  height: 80px;
-  background: crimson;
-  animation: dsTop 1.5s;
-}
-.card .avatar-holder {
-  position: absolute;
-  margin: auto;
-  top: 40px;
-  right: 0;
-  left: 0;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  box-shadow: 0 0 0 5px #151515, inset 0 0 0 5px #000000, inset 0 0 0 5px #000000, inset 0 0 0 5px #000000, inset 0 0 0 5px #000000;
-  background: white;
-  overflow: hidden;
-  animation: mvTop 1.5s;
-}
-.card .avatar-holder img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.card .name {
-  position: absolute;
-  margin: auto;
-  top: -150px;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: inherit;
-  height: 40px;
-  text-align: center;
-  animation: fadeIn 2s ease-in;
-}
-.card .name a {
+.card { 
+  width: calc(var(--card-size) * 1.586);
+  height: var(--card-size);
+  
+  border-radius: 0.75rem;
+  box-shadow:  0 22px 70px 4px rgba(0,0,0,0.56), 0 0 0 1px rgba(0, 0, 0, 0.3);
+  
+  background: black;
+  
+  display: grid;
+  grid-template-columns: 40% auto;
   color: white;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 18px;
+  
+  align-items: center;
+  
+  will-change: transform;
+  transition: transform 0.25s cubic-bezier(0.4, 0.0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
+  
+  &:hover {
+     transform: scale(1.1);
+     box-shadow:  0 32px 80px 14px rgba(0,0,0,0.36), 0 0 0 1px rgba(0, 0, 0, 0.3);
+  }
 }
-.card .name a:hover {
-  text-decoration: underline;
-  color: crimson;
+
+.card-details {
+  padding: 1rem;
 }
-.card .name h6 {
-  position: absolute;
-  margin: auto;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  color: white;
-  width: 40px;
+
+.name {
+  font-size: 1.25rem;
 }
-.card .button {
-  position: absolute;
-  margin: auto;
-  padding: 8px;
-  top: 10px;
-  right: 0;
-  bottom: 90px;
-  left: 0;
-  width: inherit;
-  height: 40px;
-  text-align: center;
-  animation: fadeIn 2s ease-in;
-  outline: none;
+
+.occupation {
+  font-weight: 600;
+  color: var(--primary);
 }
-.card .button a {
-  padding: 5px 20px;
-  border-radius: 10px;
-  color: white;
-  letter-spacing: 0.05em;
-  text-decoration: none;
-  font-size: 10px;
-  transition: all 1s;
+
+.card-avatar {
+  display: grid;
+  place-items: center;
+  margin-bottom: 5.5rem;
 }
-.card .button a:hover {
-  color: white;
-  background: crimson;
+
+.card-avatar img {
+  width: 80%;  /* Sesuaikan persentasenya sesuai kebutuhan */
+  max-width: 100px; /* Batas maksimal agar tidak terlalu besar */
+  height: auto; /* Menjaga aspek rasio gambar */
+  border-radius: 50%; /* Opsional: Membuat gambar menjadi bulat */
 }
-.card .ds-info {
-  position: absolute;
-  margin: auto;
-  top: 120px;
-  bottom: 0;
-  right: 0;
-  left: 3rem;
-  width: inherit;
-  height: 40px;
+
+.card-about {
+  margin-top: 1rem;
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.item {
   display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+  
+  .value {
+     font-size: 1rem;
+  }
+  
+  .label {
+     margin-top: 0.15rem;
+     font-size: 0.75rem;
+     font-weight: 600;
+     color: var(--primary);
+  }
 }
-.card .ds-info .pens, .card .ds-info .projects, .card .ds-info .posts {
-  position: relative;
-  left: -300px;
-  width: calc(250px / 3);
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.75rem;
+  
+  .label {
+     font-size: 1rem;
+     font-weight: 600;
+     color: var(--primary);
+  }
+  
+  .value {
+     margin-top: 0.15rem;
+     font-size: 0.75rem;
+     line-height: 1.25rem;
+  }
+}
+
+.rate-hour {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.75rem;
   text-align: center;
-  color: white;
-  animation: fadeInMove 2s;
-  animation-fill-mode: forwards;
-}
-.card .ds-info .pens h6, .card .ds-info .projects h6, .card .ds-info .posts h6 {
-  text-transform: uppercase;
-  color: crimson;
-}
-.card .ds-info .pens p, .card .ds-info .projects p, .card .ds-info .posts p {
-  font-size: 12px;
-}
-.card .ds-info .ds:nth-of-type(2) {
-  animation-delay: 0.5s;
-}
-.card .ds-info .ds:nth-of-type(1) {
-  animation-delay: 1s;
-}
-.card .ds-skill {
-  position: absolute;
-  margin: auto;
-  bottom: 10px;
-  right: 0;
-  left: 0;
-  width: 200px;
-  height: 100px;
-  animation: mvBottom 1.5s;
-}
-.card .ds-skill h6 {
-  margin-bottom: 5px;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: crimson;
-}
-.card .ds-skill .skill h6 {
-  font-weight: 400;
-  font-size: 8px;
-  letter-spacing: 0.05em;
-  margin: 4px 0;
-  color: white;
-}
-.card .ds-skill .skill .fab {
-  color: crimson;
-  font-size: 14px;
-}
-.card .ds-skill .skill .bar {
-  height: 5px;
-  background: crimson;
-  text-align: right;
-}
-.card .ds-skill .skill .bar p {
-  color: white;
-  font-size: 8px;
-  padding-top: 5px;
-  animation: fadeIn 5s;
-}
-.card .ds-skill .skill .bar:hover {
-  background: white;
-}
-.card .ds-skill .skill .bar-html {
-  width: 65%;
-  animation: htmlSkill 1s;
-  animation-delay: 0.4s;
-}
-.card .ds-skill .skill .bar-css {
-  width: 40%;
-  animation: cssSkill 2s;
-  animation-delay: 0.4s;
-}
-.card .ds-skill .skill .bar-js {
-  width: 20%;
-  animation: jsSkill 3s;
-  animation-delay: 0.4s;
 }
 
-@keyframes fadeInMove {
-  0% {
-    opacity: 0;
-    left: -300px;
-  }
-  100% {
-    opacity: 1;
-    left: 0;
-  }
-}
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes htmlSkill {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 95%;
-  }
-}
-@keyframes cssSkill {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 90%;
-  }
-}
-@keyframes jsSkill {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 75%;
-  }
-}
-@keyframes mvBottom {
-  0% {
-    bottom: -150px;
-  }
-  100% {
-    bottom: 10px;
-  }
-}
-@keyframes mvTop {
-  0% {
-    top: -150px;
-  }
-  100% {
-    top: 40px;
-  }
-}
-@keyframes dsTop {
-  0% {
-    top: -150px;
-  }
-  100% {
-    top: 0;
-  }
-}
-.following {
-  color: white;
-  background: crimson;
+.rate-hour .value {
+  font-size: 1.5rem; /* Ukuran angka */
+  font-weight: bold;
+  color: var(--secondary); /* Menggunakan warna tema */
 }
 
-.card .rate {
-  position: absolute;
-  margin: auto;
-  top: 300px; /* Sesuaikan posisi sesuai kebutuhan */
-  right: 0;
-  left: 0;
-  text-align: center;
-  color: white;
-  font-size: 14px;
-  margin-top: 50px;
-  animation: slideIn 0.5s ease-in-out;
+.rate-hour .label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary); /* Warna label */
 }
 
-.ds-info a {
-  text-decoration: none; /* Menghilangkan garis bawah */
-  color: crimson; /* Warna teks, bisa disesuaikan */
-  font-weight: bold; /* Membuat teks menjadi tebal */
-  transition: color 0.3s; /* Efek transisi saat hover */
+.qr-box {
+  margin-top: 2rem;
+  padding: 2rem;
+  border: 1px solid #ccc; /* Border untuk box */
+  border-radius: 8px; /* Sudut melengkung pada box */
+  background: #111; /* Latar belakang box */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.ds-info a:hover {
-  color: rgb(141, 5, 33); /* Warna saat hover, bisa disesuaikan */
+.qr-code img {
+  width: 100px;  /* Sesuaikan ukuran gambar QR */
+  height: 100px; /* Sesuaikan ukuran gambar QR */
+  object-fit: cover; /* Memastikan gambar tetap proporsional */
+  border-radius: 4px; /* Opsional: memberikan sudut melengkung pada gambar */
 }
 
-.card .description {
-  text-align: center;
-  color: white;
-  font-size: 12px;
-  padding: 0 10px; /* Tambahkan padding jika diperlukan */
-  margin-top: 14rem;
-  animation: slideIn 0.5s ease-in-out;
-}
