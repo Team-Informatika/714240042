@@ -6,6 +6,11 @@ onHashChange(muncul);
 
 function muncul(){
   console.log(getHash());
+  const hashpath = getHash();
+  if (hashpath == "cardbenar") {
+    console.log("kedetek");
+    renderHTML('cardbenar', 'content.html');
+  }
 }
 
 renderHTML('cardbenar', 'content.html');
