@@ -5,11 +5,18 @@ import { getHash, onHashChange } from "https://cdn.jsdelivr.net/gh/jscroot/lib@0
 onHashChange(muncul);
 
 function muncul(){
-  console.log(getHash());
-  const hashpath = getHash();
-  if (hashpath == "cardbenar") {
+  const hashpath = getHash().replace("#", ""); // Pastikan tidak ada #
+  console.log(hashpath);
+
+  if (hashpath === "cardbenar") {
     console.log("kedetek");
-    renderHTML('cardbenar', 'content.html');
+
+    // Pastikan elemen cardbenar ada sebelum renderHTML
+    if (document.getElementById("cardbenar")) {
+      renderHTML('cardbenar', 'content.html');
+    } else {
+      console.error("Element #cardbenar tidak ditemukan di DOM");
+    }
   }
 }
 
