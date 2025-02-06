@@ -7,18 +7,11 @@ onHashChange(muncul);
 renderHTML('qr', 'qr.html')
 
 function muncul(){
-  const hashpath = getHash().replace("#", ""); // Pastikan tidak ada #
-  console.log(hashpath);
-
-  if (hashpath === "content") {
+  console.log(getHash());
+  const hashpath = getHash();
+  if (hashpath === 'content') {
     console.log("kedetek");
-
-    // Pastikan elemen cardbenar ada sebelum renderHTML
-    if (document.getElementById("content")) {
-      renderHTML('cardbenar', 'content.html');
-    } else {
-      console.error("Element #cardbenar tidak ditemukan di DOM");
-    }
+    renderHTML('cardbenar', "content.html");
   }
 }
 
