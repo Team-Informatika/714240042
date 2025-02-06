@@ -14,7 +14,8 @@ function responseFunction(response) {
   console.log('Response Data:', response.data);
 
   const item = document.getElementById('item-list')
-  response.data.forEach((item) => {
+  let dataitem = response.data;
+  dataitem.forEach((item) => {
     const itemContainer = document.createElement("div");
     itemContainer.className = "item";
     const isiValue = document.createElement("span");
