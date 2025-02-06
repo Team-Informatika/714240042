@@ -10,11 +10,11 @@ function muncul(){
   const hashpath = getHash().replace("#", ""); // Pastikan tidak ada #
   console.log(hashpath);
 
-  if (hashpath === "cardbenar") {
+  if (hashpath === "content") {
     console.log("kedetek");
 
     // Pastikan elemen cardbenar ada sebelum renderHTML
-    if (document.getElementById("cardbenar")) {
+    if (document.getElementById("content")) {
       renderHTML('cardbenar', 'content.html');
     } else {
       console.error("Element #cardbenar tidak ditemukan di DOM");
