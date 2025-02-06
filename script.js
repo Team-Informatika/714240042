@@ -13,8 +13,6 @@ function muncul(){
   }
 }
 
-renderHTML('cardbenar', 'content.html');
-
 getJSON("https://t.if.co.id/json/bagas.json","null","null",responseFunction);
 function responseFunction(response) {
   setInner('nama', response.data.card.details.name);
