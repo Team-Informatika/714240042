@@ -7,6 +7,9 @@ getJSON("https://t.if.co.id/json/bagas.json","null","null",responseFunction);
 function responseFunction(response) {
   setInner('nama', response.data.card.details.name);
   setInner('occupation', response.data.card.details.occupation)
+  const avatarSrc = data.card.avatar.src;
+  const avatarHTML = `<img src="${avatarSrc}" alt="Avatar">`;
+  setInner('avatar', avatarHTML);
   
   console.log('HTTP Status:', response.status);
   console.log('Response Data:', response.data);
