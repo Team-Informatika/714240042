@@ -20,8 +20,15 @@ function muncul(){
   }
 }
 
-getJSON("https://t.if.co.id/json/bagas.json",null,null,responseFunction);
+document.addEventListener("DOMContentLoaded", function () {
+  getJSON("https://t.if.co.id/json/bagas.json", null, null, responseFunction);
+});
+
 function responseFunction(response) {
+  if (!document.getElementById('nama') || !document.getElementById('occupation') || !document.getElementById('avatar')) {
+    console.error("Element tidak ditemukan di DOM.");
+    return;
+}
   setInner('nama', response.data.card.details.name);
   setInner('occupation', response.data.card.details.occupation)
   const avatarSrc = response.data.card.avatar.src;
