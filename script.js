@@ -19,8 +19,10 @@ function responseFunction(response) {
     itemContainer.className = "item";
     const isiValue = document.createElement("span");
     isiValue.className = "value";
+    isiValue.textContent = item.card.details.about.value;
     const isiLabel = document.createElement("span");
     isiLabel.className = "label";
+    isiLabel.textContent = item.card.details.about.label;
     console.log(itemContainer);
     console.log(isiValue);
     console.log(isiLabel;)
