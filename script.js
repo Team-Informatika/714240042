@@ -13,7 +13,7 @@ function responseFunction(response) {
   console.log('HTTP Status:', response.status);
   console.log('Response Data:', response.data);
 
-  const item = document.getElementById('item-list')
+  const container = document.getElementById('item-list')
   let dataitem = response.data.card.details.about;
   dataitem.forEach((item) => {
     const itemContainer = document.createElement("div");
@@ -27,6 +27,9 @@ function responseFunction(response) {
     console.log(itemContainer);
     console.log(isiValue);
     console.log(isiLabel);
+    itemContainer.appendChild(isiValue);
+    itemContainer.appendChild(isiLabel);
+    container.appendChild(itemContainer);
   });
   // let cardname;
   // cardname = response.data;
