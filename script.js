@@ -31,29 +31,4 @@ function responseFunction(response) {
     itemContainer.appendChild(isiLabel);
     container.appendChild(itemContainer);
   });
-  // let cardname;
-  // cardname = response.data;
-  // const isicard = document.getElementById("card");
-  // cardname.forEach((card) => {
-  //   // Membuat elemen div untuk setiap item
-  //   const teamContainer = document.createElement("div");
-  //   teamContainer.classList.add("team-list");
-
-  //   // Membuat elemen deskripsi
-  //   const pnama = document.createElement("p");
-
-  //   const link = document.createElement("a");
-  //   link.textContent = team.nama;
-  //   link.href = team.link;
-  //   console.log(pnama);
-  //   console.log(teamContainer);
-  //   pnama.appendChild(link);
-  //   // Menambahkan icon, judul, dan deskripsi ke dalam layananItem
-  //   teamContainer.appendChild(pnama);
-
-  //   // Menambahkan layananItem ke container
-  //   isiteam.appendChild(teamContainer);
-
-
-  // });
 }
