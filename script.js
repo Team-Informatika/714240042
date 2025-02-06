@@ -25,7 +25,7 @@ function responseFunction(response) {
     isiLabel.textContent = item.card.details.about.label;
     console.log(itemContainer);
     console.log(isiValue);
-    console.log(isiLabel;)
+    console.log(isiLabel);
   });
   // let cardname;
   // cardname = response.data;
