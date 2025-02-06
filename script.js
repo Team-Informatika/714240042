@@ -1,5 +1,12 @@
 import { getJSON } from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.2.0/api.js"
 import { renderHTML, setInner} from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.2.0/element.js"
+import { getHash, onHashChange } from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.2.0/url.js"
+
+onHashChange(muncul);
+
+function muncul(){
+  console.log(getHash());
+}
 
 renderHTML('cardbenar', 'content.html');
 
