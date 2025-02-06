@@ -10,9 +10,21 @@ function responseFunction(response) {
   const avatarSrc = response.data.card.avatar.src;
   const avatarHTML = `<img src="${avatarSrc}" alt="Avatar">`;
   setInner('avatar', avatarHTML);
-  
   console.log('HTTP Status:', response.status);
   console.log('Response Data:', response.data);
+
+  const item = document.getElementById('item-list')
+  response.data.forEach((item) => {
+    const itemContainer = document.createElement("div");
+    itemContainer.className = "item";
+    const isiValue = document.createElement("span");
+    isiValue.className = "value";
+    const isiLabel = document.createElement("span");
+    isiLabel.className = "label";
+    console.log(itemContainer);
+    console.log(isiValue);
+    console.log(isiLabel;)
+  });
   // let cardname;
   // cardname = response.data;
   // const isicard = document.getElementById("card");
