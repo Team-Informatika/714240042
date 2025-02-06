@@ -14,16 +14,16 @@ function responseFunction(response) {
   console.log('Response Data:', response.data);
 
   const item = document.getElementById('item-list')
-  let dataitem = response.data;
+  let dataitem = response.data.card.details.about;
   dataitem.forEach((item) => {
     const itemContainer = document.createElement("div");
     itemContainer.className = "item";
     const isiValue = document.createElement("span");
     isiValue.className = "value";
-    isiValue.textContent = item.card.details.about.value;
+    isiValue.textContent = item.value;
     const isiLabel = document.createElement("span");
     isiLabel.className = "label";
-    isiLabel.textContent = item.card.details.about.label;
+    isiLabel.textContent = item.label;
     console.log(itemContainer);
     console.log(isiValue);
     console.log(isiLabel);
