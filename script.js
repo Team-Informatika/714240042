@@ -11,7 +11,7 @@ function muncul() {
   const hashpath = getHash();
   if (hashpath === 'content') {
     console.log("kedetek");
-    renderHTML('cardmuncul', "content.html", renderDataKartu);
+    renderHTML('cardbenar', "content.html", renderDataKartu);
   }
 }
 function renderDataKartu() {
@@ -20,7 +20,7 @@ function renderDataKartu() {
 // renderHTML('cardbenar', 'content.html')
 
 function responseFunction(response) {
-  renderHTML('cardbenar', 'content.html');
+  // renderHTML('cardbenar', 'content.html');
   console.log('HTTP Status:', response.status);
   console.log('Response Data:', response.data);
   setInner('nama', response.data.card.details.name);
