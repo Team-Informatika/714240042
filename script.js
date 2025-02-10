@@ -28,8 +28,8 @@ function responseFunction(response) {
   const avatarSrc = response.data.card.avatar.src;
   const avatarHTML = `<img src="${avatarSrc}" alt="Avatar">`;
   setInner('avatar', avatarHTML);
-  setInner('harga', response.data.card.rate_hour.value);
-  setInner('harga', response.data.card.rate_hour.label);
+  setInner('harga', response.data.card.rate_hour.price);
+  setInner('rate', response.data.card.rate_hour.rate);
   const container = document.getElementById('item-list')
   let dataitem = response.data.card.details.about;
   dataitem.forEach((item) => {
