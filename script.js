@@ -11,26 +11,22 @@ function muncul(){
   const hashpath = getHash();
   if (hashpath === 'content') {
     console.log("kedetek");
-    renderHTML('cardmuncul', "content.html");
-  }
+    renderHTML('cardmuncul', "content.html", () => {
+      console.log("cardmuncul selesai, lanjut render cardbenar");
+      renderHTML('cardbenar', "content.html");
+  });
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  getJSON("https://t.if.co.id/json/bagas.json", null, null, responseFunction);
-});
+getJSON("https://t.if.co.id/json/bagas.json", null, null, responseFunction);
 
 function responseFunction(response) {
-  if (!document.getElementById('nama') || !document.getElementById('occupation') || !document.getElementById('avatar')) {
-    console.error("Element tidak ditemukan di DOM.");
-    return;
-}
+  console.log('HTTP Status:', response.status);
+  console.log('Response Data:', response.data);
   setInner('nama', response.data.card.details.name);
   setInner('occupation', response.data.card.details.occupation)
   const avatarSrc = response.data.card.avatar.src;
   const avatarHTML = `<img src="${avatarSrc}" alt="Avatar">`;
   setInner('avatar', avatarHTML);
-  console.log('HTTP Status:', response.status);
-  console.log('Response Data:', response.data);
 
   const container = document.getElementById('item-list')
   let dataitem = response.data.card.details.about;
