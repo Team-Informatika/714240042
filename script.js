@@ -2,22 +2,22 @@ import { getJSON } from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.2.0/api.js"
 import { renderHTML, setInner } from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.2.0/element.js"
 import { getHash, onHashChange } from "https://cdn.jsdelivr.net/gh/jscroot/lib@0.2.0/url.js"
 
-onHashChange(muncul);
+// onHashChange(muncul);
 
-renderHTML('qr', 'qr.html')
+// renderHTML('qr', 'qr.html')
 
-function muncul() {
-  console.log(getHash());
-  const hashpath = getHash();
-  if (hashpath === 'content') {
-    console.log("kedetek");
-    renderHTML('cardmuncul', "content.html", () => {
-      console.log("cardmuncul selesai, lanjut render cardbenar");
-      renderHTML('cardbenar', "content.html");
-    });
-  }
-}
-
+// function muncul() {
+//   console.log(getHash());
+//   const hashpath = getHash();
+//   if (hashpath === 'content') {
+//     console.log("kedetek");
+//     renderHTML('cardmuncul', "content.html", () => {
+//       console.log("cardmuncul selesai, lanjut render cardbenar");
+//       renderHTML('cardbenar', "content.html");
+//     });
+//   }
+// }
+renderHTML('cardbenar', 'content.html')
 getJSON("https://t.if.co.id/json/bagas.json", null, null, responseFunction);
 
 function responseFunction(response) {
