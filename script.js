@@ -30,6 +30,7 @@ function responseFunction(response) {
   setInner('avatar', avatarHTML);
   setInner('harga', response.data.card.details.rate_hour.price);
   setInner('rate', response.data.card.details.rate_hour.rate);
+  setInner('isi', response.data.card.details.skills.deskripsi);
   const container = document.getElementById('item-list')
   let dataitem = response.data.card.details.about;
   dataitem.forEach((item) => {
