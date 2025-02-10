@@ -11,7 +11,7 @@ function muncul(){
   const hashpath = getHash();
   if (hashpath === 'content') {
     console.log("kedetek");
-    renderHTML('cardbenar', "content.html");
+    renderHTML('cardmuncul', "content.html");
   }
 }
 
