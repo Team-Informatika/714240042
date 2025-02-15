@@ -51,4 +51,10 @@ function responseFunction(response) {
     itemContainer.appendChild(isiLabel);
     container.appendChild(itemContainer);
   });
+  const container2 = document.getElementById('social')
+  let social = response.data.card.details.social_links;
+  social.forEach((item) => {
+    const socialContainer = document.createElement("a");
+    console.log(socialContainer);
+  });
 }
