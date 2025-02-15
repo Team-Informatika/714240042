@@ -154,3 +154,25 @@ body {
   border-radius: 4px; /* Opsional: memberikan sudut melengkung pada gambar */
 }
 
+.social-links {
+  margin-top: 1rem;
+  display: flex;
+  gap: 10px;
+}
+.social-links a {
+  text-decoration: none;
+  color: var(--primary);
+  font-weight: bold;
+}
+.contact {
+  margin-top: 1rem;
+}
+.contact-button {
+  display: inline-block;
+  background: var(--secondary);
+  color: black;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
