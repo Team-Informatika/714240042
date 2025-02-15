@@ -53,8 +53,10 @@ function responseFunction(response) {
   });
   const container2 = document.getElementById('social')
   let social = response.data.card.details.social_links;
-  social.forEach((item) => {
+  social.forEach((href) => {
     const socialContainer = document.createElement("a");
+    socialContainer.textContent = href.platform;
+    socialContainer.href = href.url;
     console.log(socialContainer);
   });
 }
