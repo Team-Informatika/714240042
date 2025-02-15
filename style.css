@@ -70,7 +70,7 @@ body {
 
 .card-avatar img {
   width: 80%;  /* Sesuaikan persentasenya sesuai kebutuhan */
-  max-width: 100px; /* Batas maksimal agar tidak terlalu besar */
+  max-width: 200px; /* Batas maksimal agar tidak terlalu besar */
   height: auto; /* Menjaga aspek rasio gambar */
   border-radius: 50%; /* Opsional: Membuat gambar menjadi bulat */
 }
