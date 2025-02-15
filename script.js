@@ -31,7 +31,8 @@ function responseFunction(response) {
   setInner('harga', response.data.card.details.rate_hour.price);
   setInner('rate', response.data.card.details.rate_hour.rate);
   setInner('isi', response.data.card.details.skills.deskripsi);
-  setInner('contact', response.data.card.details.contact);
+  const contact = response.data.card.details.contact;
+  setInner('contact',`<a href="${contact}" target="_blank" class="contact-button">Contact Me</a>`);
   const container = document.getElementById('item-list')
   let dataitem = response.data.card.details.about;
   dataitem.forEach((item) => {
