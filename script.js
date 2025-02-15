@@ -58,5 +58,7 @@ function responseFunction(response) {
     socialContainer.textContent = href.platform;
     socialContainer.href = href.url;
     console.log(socialContainer);
+    socialContainer.appendChild('social')
+    container2.appendChild(socialContainer);
   });
 }
