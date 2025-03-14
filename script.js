@@ -4,6 +4,8 @@ import { getHash, onHashChange } from "https://cdn.jsdelivr.net/gh/jscroot/lib@0
 
 onHashChange(muncul);
 
+renderHTML('qr', 'qr.html')
+
 function muncul() {
   console.log(getHash());
   const hashpath = getHash();
