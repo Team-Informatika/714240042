@@ -135,6 +135,25 @@ body {
   color: var(--primary); /* Warna label */
 }
 
+.qr-box {
+  margin-top: 2rem;
+  padding: 2rem;
+  border: 1px solid #ccc; /* Border untuk box */
+  border-radius: 8px; /* Sudut melengkung pada box */
+  background: #111; /* Latar belakang box */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 150px;
+}
+
+.qr-code img {
+  width: 100px;  /* Sesuaikan ukuran gambar QR */
+  height: 100px; /* Sesuaikan ukuran gambar QR */
+  object-fit: cover; /* Memastikan gambar tetap proporsional */
+  border-radius: 4px; /* Opsional: memberikan sudut melengkung pada gambar */
+}
+
 .social-links {
   margin-top: 1rem;
   display: flex;
